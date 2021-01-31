@@ -15,12 +15,11 @@ app.use(cors());
 app.options('*', cors());
 
 
-app.use('/user', userRoute);
+app.use('/users', userRoute);
 
 const PORT = process.env.PORT || 8000;
 
-
-const dbURL = 'mongodb://localhost:27017/profiles'
+const dbURL = 'mongodb://localhost:27017/myDB'
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true }, function (err) {
     if (err) {
